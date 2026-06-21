@@ -24,4 +24,8 @@ RUN curl -sS https://getcomposer.org/installer | php \
 
 RUN composer install
 
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 775 /var/www/html/storage \
+    && chmod -R 775 /var/www/html/bootstrap/cache
+
 EXPOSE 80
