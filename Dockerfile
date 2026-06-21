@@ -26,6 +26,7 @@ RUN curl -sS https://getcomposer.org/installer | php \
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
 # Fix permissions (IMPORTANT)
-RUN chmod -R 775 storage bootstrap/cache
+RUN chmod -R 777 storage bootstrap/cache \
+    && chown -R www-data:www-data storage bootstrap/cache
 
 EXPOSE 80
