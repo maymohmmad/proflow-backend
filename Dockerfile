@@ -6,7 +6,7 @@ COPY . .
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
-    unzip zip curl libpng-dev libonig-dev libxml2-dev \
+    unzip zip curl libpng-dev libonig-dev libxml2-dev libpq-dev \
     && docker-php-ext-install pdo pdo_pgsql pgsql
 
 # Enable rewrite (important for Laravel)
