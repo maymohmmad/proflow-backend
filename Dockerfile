@@ -7,7 +7,7 @@ COPY . .
 # Install dependencies
 RUN apt-get update && apt-get install -y \
     unzip zip curl libpng-dev libonig-dev libxml2-dev \
-    && docker-php-ext-install pdo pdo_mysql
+    && docker-php-ext-install pdo pdo_pgsql pgsql
 
 # Enable rewrite (important for Laravel)
 RUN a2enmod rewrite
