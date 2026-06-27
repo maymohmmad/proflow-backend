@@ -15,6 +15,12 @@ Route::get('/test', function () {
     ]);
 });
 
+
+Route::get('/tables', function () {
+    return DB::select('SHOW TABLES');
+});
+
+
 // Public routes
 Route::prefix('auth')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
